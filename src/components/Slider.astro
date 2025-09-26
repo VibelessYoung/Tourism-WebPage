@@ -1,13 +1,60 @@
 ---
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 ---
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/Swiper-CSS/swiper-bundle.min.css" />
-    <title>Swiper Gallery</title>
+    <title>Document</title>
   </head>
   <body>
-    <script type="module" src="/Swiper-JS/swiper-bundle.min.js"></script>
+    <main class="pt-5">
+      <div class="swiper mySwiper rounded-2xl overflow-hidden aspect-video">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/src/images/iran.png" alt="" class="h-full w-full" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/src/images/iran.png" alt="" class="h-full w-full" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/src/images/iran.png" alt="" class="h-full w-full" />
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="grid grid-cols-2 pt-3 gap-3">
+        <img src="/src/images/america.png" alt="" class="rounded-2xl">
+        <img src="/src/images/america.png" alt="" class="rounded-2xl">
+      </div>
+    </main>
+    <script>
+      import Swiper from "swiper";
+      import { Navigation, Pagination } from "swiper/modules";
+
+      const swiper = new Swiper(".mySwiper", {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>

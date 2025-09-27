@@ -24,13 +24,56 @@ import "../styles/style.css";
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-6"
+              class="size-6 sm:hidden"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
             </svg>
+          </div>
+
+          <!-- DESKTOP NAVBAR -->
+
+          <div class="hidden sm:flex items-center gap-4">
+            <a href="#" class="text-sm font-medium text-gray-700 px-0">خانه</a>
+            <div x-data = "{ open : false }" class="flex gap-2">
+              <span x-on:click="open = true" class="text-gray-700">تور های داخلی</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 text-gray-700"
+                x-bind:class="{'rotate-180' : open}"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+              </svg>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-gray-700">تور های خارجی</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 text-gray-700"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+              </svg>
+            </div>
+            <a href="#" class="text-sm font-medium text-gray-700 px-0">مجله</a>
+            <a href="#" class="text-sm font-medium text-gray-700 px-0"
+              >افتخارات</a
+            >
           </div>
 
           <!-- RIGHT SIDE -->
@@ -88,5 +131,9 @@ import "../styles/style.css";
         </section>
       </nav>
     </header>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </body>
 </html>

@@ -13,61 +13,72 @@ import "swiper/css/pagination";
   </head>
   <body>
     <main class="pt-5">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 col-span-2">
-        <div class="relative w-full pt-[56%] sm:col-end-2">
-          <div class="absolute inset-0">
-            <!-- SWIPER -->
-            <div class="swiper mySwiper rounded-2xl overflow-hidden w-full">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="/src/images/iran.png"
-                    alt=""
-                    class="h-full w-full"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="/src/images/iran.png"
-                    alt=""
-                    class="h-full w-full"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="/src/images/iran.png"
-                    alt=""
-                    class="h-full w-full"
-                  />
-                </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <!-- SLIDER -->
+        <div class="sm:col-span-2">
+          <div
+            class="swiper mySwiper rounded-2xl overflow-hidden w-full aspect-video"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="/src/images/iran.png"
+                  alt=""
+                  class="h-full w-full object-cover"
+                />
               </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
-
-              <!-- Navigation -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="swiper-slide">
+                <img
+                  src="/src/images/iran.png"
+                  alt=""
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/src/images/iran.png"
+                  alt=""
+                  class="h-full w-full object-cover"
+                />
+              </div>
             </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Navigation -->
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
           </div>
         </div>
 
-        <div class="col-span-1">
-          <div class="grid grid-cols-2 pt-3 gap-3 sm:grid-cols-1">
-            <img src="/src/images/america.png" alt="" class="rounded-2xl" />
-            <img src="/src/images/america.png" alt="" class="rounded-2xl" />
-          </div>
+        <!-- SIDE IMAGES -->
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-1">
+          <img
+            src="/src/images/america.png"
+            alt=""
+            class="rounded-2xl object-cover w-full h-full"
+          />
+          <img
+            src="/src/images/america.png"
+            alt=""
+            class="rounded-2xl object-cover w-full h-full"
+          />
         </div>
       </div>
     </main>
     <script>
       import Swiper from "swiper";
-      import { Navigation, Pagination } from "swiper/modules";
+      import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
       const swiper = new Swiper(".mySwiper", {
-        modules: [Navigation, Pagination],
+        modules: [Navigation, Pagination, Autoplay],
         slidesPerView: 1,
         loop: true,
+        autoplay: {
+          delay: 3000, // هر 3 ثانیه اسلاید عوض بشه
+          disableOnInteraction: false, // وقتی کاربر کلیک کرد، باز هم ادامه بده
+        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,

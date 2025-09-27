@@ -14,7 +14,7 @@ import "../styles/style.css";
 
     <header class="w-full">
       <nav class="h-14 w-full bg-white border-b border-gray-300">
-        <section class="container p-[1rem] flex justify-between items-center">
+        <section class="w-full p-[1rem] flex justify-between items-center">
           <!-- HAMBURGER MENU -->
 
           <div>
@@ -35,7 +35,7 @@ import "../styles/style.css";
 
           <!-- DESKTOP NAVBAR -->
 
-          <div class="hidden sm:flex items-center gap-4">
+          <div class="hidden sm:flex items-center gap-4 ml-0">
             <a href="#" class="text-sm font-medium text-gray-700 px-0">خانه</a>
             <div x-data = "{ open : false }" class="flex gap-2">
               <span x-on:click="open = true" class="text-gray-700">تور های داخلی</span>

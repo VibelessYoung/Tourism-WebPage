@@ -37,38 +37,104 @@ import "../styles/style.css";
 
           <div class="hidden sm:flex items-center gap-4 ml-0">
             <a href="#" class="text-sm font-medium text-gray-700 px-0">خانه</a>
-            <div x-data = "{ open : false }" class="flex gap-2">
-              <span x-on:click="open = true" class="text-gray-700">تور های داخلی</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6 text-gray-700"
-                x-bind:class="{'rotate-180' : open}"
+            <div
+              x-data="{ open: false }"
+              class="relative inline-block text-left"
+            >
+              <!-- Trigger -->
+              <div
+                class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
+                @click="open = !open"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-              </svg>
+                <span class="text-gray-700">تور های داخلی</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5 text-gray-700 transition-transform duration-200 text-sm font-medium"
+                  :class="{ 'rotate-180': open }"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                </svg>
+              </div>
+
+              <!-- Dropdown Menu -->
+              <div
+                x-show="open"
+                @click.outside="open = false"
+                x-transition
+                class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  >مشهد</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100">کیش</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  >شیراز</a
+                >
+              </div>
             </div>
-            <div class="flex gap-2">
-              <span class="text-gray-700">تور های خارجی</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6 text-gray-700"
+
+            <div
+              x-data="{ open: false }"
+              class="relative inline-block text-left"
+            >
+              <!-- Trigger -->
+              <div
+                class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
+                @click="open = !open"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-              </svg>
+                <span class="text-gray-700">تور های خارجی</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5 text-gray-700 transition-transform duration-200 text-sm font-medium"
+                  :class="{ 'rotate-180': open }"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                </svg>
+              </div>
+
+              <!-- Dropdown Menu -->
+              <div
+                x-show="open"
+                @click.outside="open = false"
+                x-transition
+                class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  >ترکیه</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100">لندن</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  >برزیل</a
+                >
+              </div>
             </div>
             <a href="#" class="text-sm font-medium text-gray-700 px-0">مجله</a>
             <a href="#" class="text-sm font-medium text-gray-700 px-0"

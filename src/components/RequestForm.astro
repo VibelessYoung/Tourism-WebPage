@@ -20,7 +20,9 @@ import "../styles/style.css";
           درخواست سفر
         </h1>
 
-        <div class="flex flex-col sm:flex-row gap-3">
+        <div
+          class="flex flex-col sm:flex-row gap-3 border-dashed border-b-2 border-gray-400 py-10 sm:py-0"
+        >
           <div class="sm:flex sm:flex-col">
             <span class="font-medium text-gray-700 sm:mb-3">تعداد نفرات</span>
 
@@ -40,7 +42,9 @@ import "../styles/style.css";
             </div>
           </div>
           <div class="sm:flex sm:flex-col sm:mx-auto">
-            <h1 class="text-gray-800 text-base border-t pt-5 pb-3 mb-4 sm:border-0 sm:py-0">
+            <h1
+              class="text-gray-800 text-base border-t pt-5 pb-3 mb-4 sm:border-0 sm:py-0"
+            >
               تعداد نفرات دلخواه
             </h1>
             <div class="relative w-full">
@@ -65,6 +69,80 @@ import "../styles/style.css";
               />
             </div>
           </div>
+        </div>
+        <div class="flex flex-col mt-5">
+          <form action="" class="flex flex-col">
+            <div class="flex flex-col sm:flex-row">
+              <div>
+                <h1>اطلاعات شخصی</h1>
+                <input
+                  placeholder="نام"
+                  type="text"
+                  class="mt-5 w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
+                />
+                <input
+                  placeholder="نام خانوادگی"
+                  type="text"
+                  class="my-5 w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
+                />
+                <input
+                  placeholder="example@gmail.com"
+                  type="email"
+                  class="w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
+                />
+                <div
+                  class="flex gap-10 items-center mt-5 border-b-black border-b-[0.5px] pb-5"
+                >
+                  <h1 class="">جنسیت</h1>
+                  <div class="flex justify-center items-center gap-4">
+                    <label
+                      for="male"
+                      class="flex items-center gap-2 cursor-pointer"
+                    >
+                      <input
+                        type="radio"
+                        name="gender"
+                        id="male"
+                        value="male"
+                      />
+                      آقا
+                    </label>
+                    <label
+                      for="female"
+                      class="flex items-center gap-2 cursor-pointer"
+                    >
+                      <input
+                        type="radio"
+                        name="gender"
+                        id="female"
+                        value="female"
+                      />
+                      خانم
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="sm:w-full sm:px-20 sm:ml-auto">
+                <div class="flex flex-col mt-5 sm:mt-0">
+                  <h1 class="mb-2 text-lg font-semibold sm:pb-2">روش‌های پرداخت</h1>
+                  <select
+                    class="border rounded-lg p-2 focus:outline-none sm:max-w-[300px]"
+                    name="payment"
+                    id="payment"
+                  >
+                    <option value="">انتخاب کنید...</option>
+                    <option value="credit-card">کارت بانکی</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cash">نقدی</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+          <button
+                    class="bg-purple-500 text-white flex justify-center py-3 mt-5 rounded-full"
+                    >مرحله بعد</button
+                  >
         </div>
       </form>
       <script

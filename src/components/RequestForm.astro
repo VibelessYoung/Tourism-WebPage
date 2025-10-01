@@ -3,11 +3,46 @@ import "../styles/style.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fa">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>درخواست سفر</title>
   </head>
-  <body> </body>
+  <body class="bg-gray-300">
+    <main class="p-5 flex justify-center items-center">
+      <form
+        action=""
+        class="rounded-2xl bg-white flex flex-col p-6 shadow-lg w-full max-w-[1200px]"
+        x-data="{ selected: 2 }"
+      >
+        <h1 class="text-gray-800 text-2xl text-center border-b pb-3 mb-4">
+          درخواست سفر
+        </h1>
+
+        <div class="flex flex-col gap-3">
+          <span class="font-medium text-gray-700">تعداد نفرات</span>
+
+          <div class="flex justify-center gap-3 mb-6">
+            <template x-for="num in [1,2,3,4]" :key="num">
+              <button
+                type="button"
+                @click="selected = num"
+                class="w-12 h-12 flex items-center justify-center rounded-lg font-bold transition"
+                :class="selected === num 
+                  ? 'bg-purple-600 text-white shadow-lg scale-105' 
+                  : 'bg-purple-200 text-purple-800 hover:bg-purple-300'"
+                x-text="num"
+              >
+              </button>
+            </template>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer></script>
+  </body>
 </html>

@@ -9,8 +9,8 @@ import "../styles/style.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>درخواست سفر</title>
   </head>
-  <body class="bg-gray-300">
-    <main class="p-5 flex justify-center items-center">
+  <body>
+    <main class="p-5 flex justify-center items-center bg-gray-200">
       <form
         action=""
         class="rounded-2xl bg-white flex flex-col p-6 shadow-lg w-full max-w-[1200px]"
@@ -20,46 +20,50 @@ import "../styles/style.css";
           درخواست سفر
         </h1>
 
-        <div class="flex flex-col gap-3">
-          <span class="font-medium text-gray-700">تعداد نفرات</span>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="sm:flex sm:flex-col">
+            <span class="font-medium text-gray-700 sm:mb-3">تعداد نفرات</span>
 
-          <div class="flex justify-center gap-3 mb-6">
-            <template x-for="num in [1,2,3,4]" :key="num">
-              <button
-                type="button"
-                @click="selected = num"
-                class="w-12 h-12 flex items-center justify-center rounded-lg font-bold transition"
-                :class="selected === num 
+            <div class="flex justify-center gap-3 mb-6">
+              <template x-for="num in [1,2,3,4]" :key="num">
+                <button
+                  type="button"
+                  @click="selected = num"
+                  class="w-12 h-12 flex items-center justify-center rounded-lg font-bold transition"
+                  :class="selected === num 
                   ? 'bg-purple-600 text-white shadow-lg scale-105' 
                   : 'bg-purple-200 text-purple-800 hover:bg-purple-300'"
-                x-text="num"
-              >
-              </button>
-            </template>
+                  x-text="num"
+                >
+                </button>
+              </template>
+            </div>
           </div>
-          <h1 class="text-gray-800 text-base border-t pt-5 pb-3 mb-4">
-            تعداد نفرات دلخواه
-          </h1>
-          <div class="relative w-full">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="purple"
-              class="w-6 h-6 absolute left-3 top-1/2 -translate-y-1/2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 19a6 6 0 00-12 0M12 11a4 4 0 100-8 4 4 0 000 8zm9 8v-6m-3 3h6"
-              ></path>
-            </svg>
-            <input
-              type="text"
-              class="w-full rounded-2xl border-2 h-12 pl-12 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
-              placeholder="5"
-            />
+          <div class="sm:flex sm:flex-col sm:mx-auto">
+            <h1 class="text-gray-800 text-base border-t pt-5 pb-3 mb-4 sm:border-0 sm:py-0">
+              تعداد نفرات دلخواه
+            </h1>
+            <div class="relative w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="purple"
+                class="w-6 h-6 absolute left-3 top-1/2 -translate-y-1/2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 19a6 6 0 00-12 0M12 11a4 4 0 100-8 4 4 0 000 8zm9 8v-6m-3 3h6"
+                ></path>
+              </svg>
+              <input
+                type="text"
+                class="w-full rounded-2xl border-2 h-12 pl-12 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
+                placeholder="5"
+              />
+            </div>
           </div>
         </div>
       </form>

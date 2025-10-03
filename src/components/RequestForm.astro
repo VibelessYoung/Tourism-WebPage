@@ -13,7 +13,7 @@ import "../styles/style.css";
     <main class="p-5 flex justify-center items-center bg-gray-200">
       <form
         action=""
-        class="rounded-2xl bg-white flex flex-col p-6 shadow-lg w-full max-w-[1200px]"
+        class="relative rounded-2xl bg-white flex flex-col p-6 shadow-lg w-full max-w-[1200px]"
         x-data="{ selected: 2 }"
       >
         <h1 class="text-gray-800 text-2xl text-center border-b pb-3 mb-4">
@@ -148,9 +148,9 @@ import "../styles/style.css";
           >
         </div>
       </form>
-      <div class="flex flex-col bg-white rounded-2xl p-3 justify-center">
+      <div class="flex flex-col bg-white rounded-2xl p-3 justify-center absolute z-10 w-[400px]">
         <h1 class="mb-1">ویژگی های سفرتان را انتخاب کنید</h1>
-        <div class="flex justify-between items-center bg-gray-100">
+        <div class="flex justify-between items-center bg-gray-100 py-3">
           <h3>غذا</h3>
           <div class="flex gap-3">
             <div x-data="{ selected: [] }" class="flex gap-3">
@@ -186,7 +186,7 @@ import "../styles/style.css";
             </div>
           </div>
         </div>
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center py-3">
           <h3>مکان های دیدنی</h3>
           <div class="flex gap-3">
             <div x-data="{ selected: [] }" class="flex gap-3">
@@ -222,7 +222,7 @@ import "../styles/style.css";
             </div>
           </div>
         </div>
-        <div class="flex justify-between bg-gray-100">
+        <div class="flex justify-between bg-gray-100 py-3">
           <h3>هتل</h3>
           <div class="flex gap-3">
             <div x-data="{ selected: '' }" class="flex gap-3">
@@ -252,7 +252,7 @@ import "../styles/style.css";
             </div>
           </div>
         </div>
-        <div class="flex justify-between">
+        <div class="flex justify-between py-3">
           <h3>انتقال</h3>
           <div
             x-data="{ transfer: 'هوایی' }"
@@ -279,7 +279,7 @@ import "../styles/style.css";
             </button>
           </div>
         </div>
-        <div class="flex justify-between bg-gray-100">
+        <div class="flex justify-between bg-gray-100 py-3">
           <h3>روش های انتقال</h3>
           <div class="flex gap-3">
             <button class="rounded-2xl bg-red-200 p-1.5">اتوبوس</button>
@@ -290,6 +290,7 @@ import "../styles/style.css";
           >اعمال</button
         >
       </div>
+      <div class="absolute w-full h-screen bg-black opacity-65"></div>
       <script
         src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
         defer></script>

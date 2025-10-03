@@ -153,30 +153,131 @@ import "../styles/style.css";
         <div class="flex justify-between items-center bg-gray-100">
           <h3>غذا</h3>
           <div class="flex gap-3">
-            <button class="rounded-2xl bg-purple-200 p-1.5">شام</button>
-            <button class="rounded-2xl bg-purple-200 p-1.5">ناهار</button>
-            <button class="rounded-2xl bg-purple-200 p-1.5">صبحانه</button>
+            <div x-data="{ selected: [] }" class="flex gap-3">
+              <button
+                @click="selected.includes('شام') 
+              ? selected = selected.filter(i => i !== 'شام') 
+              : selected.push('شام')"
+                :class="selected.includes('شام') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                شام
+              </button>
+
+              <button
+                @click="selected.includes('ناهار') 
+              ? selected = selected.filter(i => i !== 'ناهار') 
+              : selected.push('ناهار')"
+                :class="selected.includes('ناهار') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                ناهار
+              </button>
+
+              <button
+                @click="selected.includes('صبحانه') 
+              ? selected = selected.filter(i => i !== 'صبحانه') 
+              : selected.push('صبحانه')"
+                :class="selected.includes('صبحانه') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                صبحانه
+              </button>
+            </div>
           </div>
         </div>
         <div class="flex justify-between items-center">
           <h3>مکان های دیدنی</h3>
           <div class="flex gap-3">
-            <button class="rounded-2xl bg-green-200 p-1.5">تفریحی</button>
-            <button class="rounded-2xl bg-green-200 p-1.5">تاریخی</button>
-            <button class="rounded-2xl bg-green-200 p-1.5">ورزشی</button>
+            <div x-data="{ selected: [] }" class="flex gap-3">
+              <button
+                @click="selected.includes('ورزشی') 
+              ? selected = selected.filter(i => i !== 'ورزشی') 
+              : selected.push('ورزشی')"
+                :class="selected.includes('ورزشی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                ورزشی
+              </button>
+
+              <button
+                @click="selected.includes('تاریخی') 
+              ? selected = selected.filter(i => i !== 'تاریخی') 
+              : selected.push('تاریخی')"
+                :class="selected.includes('تاریخی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                تاریخی
+              </button>
+
+              <button
+                @click="selected.includes('تفریحی') 
+              ? selected = selected.filter(i => i !== 'تفریحی') 
+              : selected.push('تفریحی')"
+                :class="selected.includes('تفریحی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                تفریحی
+              </button>
+            </div>
           </div>
         </div>
         <div class="flex justify-between bg-gray-100">
           <h3>هتل</h3>
           <div class="flex gap-3">
-            <button class="rounded-2xl bg-yellow-200 p-1.5">3</button>
-            <button class="rounded-2xl bg-yellow-200 p-1.5">4</button>
-            <button class="rounded-2xl bg-yellow-200 p-1.5">5</button>
+            <div x-data="{ selected: '' }" class="flex gap-3">
+              <button
+                @click="selected = '3'"
+                :class="selected === '3' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                3
+              </button>
+
+              <button
+                @click="selected = '4'"
+                :class="selected === '4' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                4
+              </button>
+
+              <button
+                @click="selected = '5'"
+                :class="selected === '5' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+                class="rounded-2xl p-1.5"
+              >
+                5
+              </button>
+            </div>
           </div>
         </div>
         <div class="flex justify-between">
           <h3>انتقال</h3>
-          <!-- -->
+          <div
+            x-data="{ transfer: 'هوایی' }"
+            class="inline-flex rounded-full border border-gray-300 overflow-hidden"
+          >
+            <button
+              @click="transfer = 'هوایی'"
+              :class="transfer === 'هوایی' 
+      ? 'bg-purple-600 text-white' 
+      : 'bg-white text-gray-600'"
+              class="px-4 py-2 font-medium transition"
+            >
+              هوایی
+            </button>
+
+            <button
+              @click="transfer = 'زمینی'"
+              :class="transfer === 'زمینی' 
+      ? 'bg-purple-600 text-white' 
+      : 'bg-white text-gray-600'"
+              class="px-4 py-2 font-medium transition border-r border-gray-300"
+            >
+              زمینی
+            </button>
+          </div>
         </div>
         <div class="flex justify-between bg-gray-100">
           <h3>روش های انتقال</h3>
@@ -185,7 +286,9 @@ import "../styles/style.css";
             <button class="rounded-2xl bg-red-200 p-1.5">قطار</button>
           </div>
         </div>
-        <button class="p-3 rounded-full bg-red-400 text-white mt-3">اعمال</button>
+        <button class="p-3 rounded-full bg-red-400 text-white mt-3"
+          >اعمال</button
+        >
       </div>
       <script
         src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"

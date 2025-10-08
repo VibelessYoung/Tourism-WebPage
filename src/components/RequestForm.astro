@@ -309,12 +309,9 @@ import "../styles/style.css";
             </div>
           </div>
         </div>
-
-        <div></div>
-
-
         <button
           @click="showModal = false"
+          id="submit"
           class="p-3 rounded-full bg-red-400 text-white mt-3">اعمال</button
         >
       </div>
@@ -325,9 +322,40 @@ import "../styles/style.css";
         class="fixed inset-0 bg-black opacity-65 z-40"
       >
       </div>
+      <div
+        id="alert"
+        class="top-10 left-10 z-50 w-[300px] flex flex-col justify-center items-center bg-green-400 text-white fixed text-xl rounded-2xl hidden overflow-hidden"
+      >
+        <p class="p-4">تایید شد</p>
+        <div id="progress" class="w-full h-2 bg-green-700"></div>
+      </div>
+
       <script
         src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
         defer></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const alertEL = document.querySelector("#alert");
+          const progressEL = document.querySelector("#progress");
+          const submitEL = document.querySelector("#submit");
+
+          function clickHandler() {
+            alertEL.classList.remove("hidden");
+
+            progressEL.style.width = "100%";
+
+            setTimeout(() => {
+              progressEL.style.width = "0%";
+            }, 50);
+
+            setTimeout(() => {
+              alertEL.classList.add("hidden");
+            }, 2050);
+          }
+
+          submitEL.addEventListener("click", clickHandler);
+        });
+      </script>
     </main>
   </body>
 </html>

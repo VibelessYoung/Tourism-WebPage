@@ -10,3 +10,7 @@
 body {
   font-family: "Vazirmatn", sans-serif;
 }
+
+#progress {
+  transition: width 2s linear; /* انیمیشن نرم */
+}

@@ -260,40 +260,59 @@ import "../styles/style.css";
             </div>
           </div>
         </div>
-        <div class="flex justify-between py-3">
-          <h3>انتقال</h3>
-          <div
-            x-data="{ transfer: 'هوایی' }"
-            class="inline-flex rounded-full border border-gray-300 overflow-hidden"
-          >
-            <button
-              @click="transfer = 'هوایی'"
-              :class="transfer === 'هوایی' 
-      ? 'bg-purple-600 text-white' 
-      : 'bg-white text-gray-600'"
-              class="px-4 py-2 font-medium transition"
+        <div x-data="{ transfer: 'هوایی' }" class="space-y-3">
+          <div class="flex justify-between py-3">
+            <h3>انتقال</h3>
+            <div
+              class="inline-flex rounded-full border border-gray-300 overflow-hidden"
             >
-              هوایی
-            </button>
+              <button
+                @click="transfer = 'هوایی'"
+                :class="transfer === 'هوایی' 
+          ? 'bg-purple-600 text-white' 
+          : 'bg-white text-gray-600'"
+                class="px-4 py-2 font-medium transition"
+              >
+                هوایی
+              </button>
 
-            <button
-              @click="transfer = 'زمینی'"
-              :class="transfer === 'زمینی' 
-      ? 'bg-purple-600 text-white' 
-      : 'bg-white text-gray-600'"
-              class="px-4 py-2 font-medium transition border-r border-gray-300"
-            >
-              زمینی
-            </button>
+              <button
+                @click="transfer = 'زمینی'"
+                :class="transfer === 'زمینی' 
+          ? 'bg-purple-600 text-white' 
+          : 'bg-white text-gray-600'"
+                class="px-4 py-2 font-medium transition border-r border-gray-300"
+              >
+                زمینی
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-between bg-gray-100 py-3">
+            <h3>روش های انتقال</h3>
+            <div class="flex gap-3">
+              <button
+                class="rounded-2xl bg-red-200 p-1.5 transition"
+                :disabled="transfer === 'هوایی'"
+                :class="transfer === 'هوایی' ? 'opacity-50 blur-[1px] cursor-not-allowed' : ''"
+              >
+                اتوبوس
+              </button>
+
+              <button
+                class="rounded-2xl bg-red-200 p-1.5 transition"
+                :disabled="transfer === 'هوایی'"
+                :class="transfer === 'هوایی' ? 'opacity-50 blur-[1px] cursor-not-allowed' : ''"
+              >
+                قطار
+              </button>
+            </div>
           </div>
         </div>
-        <div class="flex justify-between bg-gray-100 py-3">
-          <h3>روش های انتقال</h3>
-          <div class="flex gap-3">
-            <button class="rounded-2xl bg-red-200 p-1.5">اتوبوس</button>
-            <button class="rounded-2xl bg-red-200 p-1.5">قطار</button>
-          </div>
-        </div>
+
+        <div></div>
+
+
         <button
           @click="showModal = false"
           class="p-3 rounded-full bg-red-400 text-white mt-3">اعمال</button

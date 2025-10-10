@@ -12,7 +12,7 @@ import "../styles/style.css";
   <body>
     <main>
       <section class="flex flex-col bg-gray-300 py-30">
-        <div class="flex justify-center gap-60">
+        <div class="hidden xl:flex justify-center gap-60 text-center">
           <h1>نام شرکت</h1>
           <h1>مقصد</h1>
           <h1>هتل</h1>
@@ -20,37 +20,42 @@ import "../styles/style.css";
           <h1>اقدامات</h1>
         </div>
         <div
-          class="mx-10 flex justify-center gap-60 items-center bg-white rounded-2xl border-[1px] border-black h-24"
+          class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 gap-5 md:gap-20 xl:gap-60"
         >
-          <div class="flex justify-center items-center">
+          <div class="flex items-center">
             <img
               src="/src/images/avatar-4.jpg"
               alt=""
-              class="rounded-full w-20 mx-5"
+              class="rounded-full w-16 md:w-20 mx-3"
             />
-            <div class="flex flex-col">
+            <div class="flex flex-col text-center md:text-start">
               <h1>تست</h1>
               <p>تست</p>
             </div>
           </div>
           <h1>پاریس</h1>
           <h1>تست</h1>
-          <h1 class="p-3 bg-green-200 text-green-600 rounded-full my-5">
+          <h1 class="p-2 md:p-3 bg-green-200 text-green-600 rounded-full">
             دارد
           </h1>
-          <div class="flex gap-5">
+          <div
+            class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end"
+          >
             <button
-              class="rounded-2xl border-[1px] border-purple-600 text-purple-600 p-3"
-              >ثبت نام</button
+              class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base"
             >
-            <button class="rounded-[100%] bg-gray-200 p-3 text-black hover:bg-gray-300 transition-all"
-              ><svg
+              ثبت نام
+            </button>
+            <button
+              class="rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
+            >
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                class="size-5 md:size-6"
               >
                 <path
                   stroke-linecap="round"
@@ -62,37 +67,40 @@ import "../styles/style.css";
           </div>
         </div>
         <div
-          class="my-5 mx-10 flex justify-center gap-60 items-center bg-white rounded-2xl border-[1px] border-black h-24"
+          class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
         >
-          <div class="flex justify-center items-center">
+          <div class="flex items-center">
             <img
               src="/src/images/avatar-4.jpg"
               alt=""
-              class="rounded-full w-20 mx-5"
+              class="rounded-full w-16 md:w-20 mx-3"
             />
-            <div class="flex flex-col">
+            <div class="flex flex-col text-center md:text-start">
               <h1>تست</h1>
               <p>تست</p>
             </div>
           </div>
           <h1>پاریس</h1>
           <h1>تست</h1>
-          <h1 class="p-3 bg-green-200 text-green-600 rounded-full my-5">
-            دارد
-          </h1>
-          <div class="flex gap-5">
+          <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
+          <div
+            class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end"
+          >
             <button
-              class="rounded-2xl border-[1px] border-purple-600 text-purple-600 p-3"
-              >ثبت نام</button
+              class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base"
             >
-            <button class="rounded-[100%] bg-gray-200 p-3 text-black hover:bg-gray-300 transition-all"
-              ><svg
+              ثبت نام
+            </button>
+            <button
+              class="rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
+            >
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                class="size-5 md:size-6"
               >
                 <path
                   stroke-linecap="round"
@@ -104,37 +112,40 @@ import "../styles/style.css";
           </div>
         </div>
         <div
-          class="mx-10 flex justify-center gap-60 items-center bg-white rounded-2xl border-[1px] border-black h-24"
+          class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
         >
-          <div class="flex justify-center items-center">
+          <div class="flex items-center">
             <img
               src="/src/images/avatar-4.jpg"
               alt=""
-              class="rounded-full w-20 mx-5"
+              class="rounded-full w-16 md:w-20 mx-3"
             />
-            <div class="flex flex-col">
+            <div class="flex flex-col text-center md:text-start">
               <h1>تست</h1>
               <p>تست</p>
             </div>
           </div>
           <h1>پاریس</h1>
           <h1>تست</h1>
-          <h1 class="p-3 bg-red-200 text-red-600 rounded-full my-5">
-            ندارد
-          </h1>
-          <div class="flex gap-5">
+          <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
+          <div
+            class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end"
+          >
             <button
-              class="rounded-2xl border-[1px] border-purple-600 text-purple-600 p-3"
-              >ثبت نام</button
+              class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base"
             >
-            <button class="rounded-[100%] bg-gray-200 p-3 text-black hover:bg-gray-300 transition-all"
-              ><svg
+              ثبت نام
+            </button>
+            <button
+              class="rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
+            >
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                class="size-5 md:size-6"
               >
                 <path
                   stroke-linecap="round"
@@ -146,37 +157,40 @@ import "../styles/style.css";
           </div>
         </div>
         <div
-          class="my-5 mx-10 flex justify-center gap-60 items-center bg-white rounded-2xl border-[1px] border-black h-24"
+          class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
         >
-          <div class="flex justify-center items-center">
+          <div class="flex items-center">
             <img
               src="/src/images/avatar-4.jpg"
               alt=""
-              class="rounded-full w-20 mx-5"
+              class="rounded-full w-16 md:w-20 mx-3"
             />
-            <div class="flex flex-col">
+            <div class="flex flex-col text-center md:text-start">
               <h1>تست</h1>
               <p>تست</p>
             </div>
           </div>
           <h1>پاریس</h1>
           <h1>تست</h1>
-          <h1 class="p-3 bg-green-200 text-green-600 rounded-full my-5">
-            دارد
-          </h1>
-          <div class="flex gap-5">
+          <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
+          <div
+            class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end"
+          >
             <button
-              class="rounded-2xl border-[1px] border-purple-600 text-purple-600 p-3"
-              >ثبت نام</button
+              class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base"
             >
-            <button class="rounded-[100%] bg-gray-200 p-3 text-black hover:bg-gray-300 transition-all"
-              ><svg
+              ثبت نام
+            </button>
+            <button
+              class="rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
+            >
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                class="size-5 md:size-6"
               >
                 <path
                   stroke-linecap="round"
@@ -186,7 +200,7 @@ import "../styles/style.css";
               </svg>
             </button>
           </div>
-        </div> 
+        </div>
       </section>
     </main>
   </body>

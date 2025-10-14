@@ -315,11 +315,13 @@ import "../styles/style.css";
             <!-- FLAG -->
 
             <div
-              class="w-10 h-10 flex items-center justify-center rounded-full"
+              id="flagBtn"
+              class="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer select-none transition-transform duration-150 hover:scale-105"
             >
               <img
+                id="flagImg"
                 src="/src/images/iran.png"
-                alt="flag"
+                alt="پرچم ایران"
                 class="h-8 w-8 rounded-full object-cover"
               />
             </div>
@@ -356,5 +358,24 @@ import "../styles/style.css";
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+    <script>
+      const flagBtn = document.getElementById("flagBtn");
+      const flagImg = document.getElementById("flagImg");
+      let isPersian = true;
+      flagBtn.addEventListener("click", function () {
+        if (isPersian) {
+          document.documentElement.setAttribute("dir", "ltr");
+          document.documentElement.setAttribute("lang", "en");
+          flagImg.src = "/src/images/iran.png";
+          flagImg.alt = "US flag";
+        } else {
+          document.documentElement.setAttribute("dir", "rtl");
+          document.documentElement.setAttribute("lang", "fa");
+          flagImg.src = "/src/images/america.png";
+          flagImg.alt = "Iran flag";
+        }
+        isPersian = !isPersian;
+      });
+    </script>
   </body>
 </html>

@@ -12,5 +12,9 @@ body {
 }
 
 #progress {
-  transition: width 2s linear; /* انیمیشن نرم */
+  transition: width 2s linear;
+}
+
+html[dir="rtl"] .direction-icon {
+  transform: rotate(180deg);
 }

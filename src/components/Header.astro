@@ -3,7 +3,7 @@ import "../styles/style.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fa">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,14 +16,13 @@ import "../styles/style.css";
   </head>
   <body>
     <!-- HEADER -->
-
-    <header class="w-full shadow-2xl">
-      <nav class="h-14 w-full bg-white border-b border-gray-300">
+    <header class="w-full shadow-2xl dark:bg-gray-900 dark:text-white">
+      <nav
+        class="h-14 w-full bg-white dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 dark:text-white"
+      >
         <section class="w-full p-[1rem] flex justify-between items-center">
           <!-- HAMBURGER MENU -->
-
           <div x-data="{ openMenu: false }" class="relative">
-            <!-- HAMBURGER MENU -->
             <div @click="openMenu = true">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,18 +50,21 @@ import "../styles/style.css";
               x-transition:leave-end="opacity-0 translate-x-full"
               class="fixed inset-0 z-40 flex"
             >
-              <!-- Black overlay -->
+              <!-- overlay -->
               <div
                 class="absolute inset-0 bg-black/60 backdrop-blur-md"
                 @click="openMenu = false"
               >
               </div>
 
-              <!-- White menu box -->
+              <!-- MENU BOX -->
               <div
-                class="absolute flex flex-col right-0 top-0 bg-white z-50 h-full w-1/2 shadow-xl p-4"
+                class="absolute flex flex-col right-0 top-0 bg-white dark:bg-gray-800 dark:text-white z-50 h-full w-1/2 shadow-xl p-4"
               >
-                <button class="text-gray-600 mb-4" @click="openMenu = false">
+                <button
+                  class="text-gray-600 dark:text-gray-300 mb-4"
+                  @click="openMenu = false"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -74,30 +76,34 @@ import "../styles/style.css";
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 
+                      12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                     ></path>
                   </svg>
                 </button>
 
-                <nav class="flex flex-col gap-4 text-gray-700" dir="rtl">
-                  <a href="#">خانه</a>
+                <nav
+                  class="flex flex-col gap-4 text-gray-700 dark:text-white"
+                  dir="rtl"
+                >
+                  <a href="#" class="dark:text-white">خانه</a>
+                  <!-- تور های داخلی -->
                   <div
                     x-data="{ open: false }"
                     class="relative inline-block text-left"
                   >
-                    <!-- Trigger -->
                     <div
                       class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
                       @click="open = !open"
                     >
-                      <span class="text-gray-700">تور های داخلی</span>
+                      <span>تور های داخلی</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"
-                        class="w-5 h-5 text-gray-700 transition-transform duration-200 text-sm font-medium"
+                        class="w-5 h-5 transition-transform duration-200"
                         :class="{ 'rotate-180': open }"
                       >
                         <path
@@ -107,47 +113,47 @@ import "../styles/style.css";
                       </svg>
                     </div>
 
-                    <!-- Dropdown Menu -->
                     <div
                       x-show="open"
                       @click.outside="open = false"
                       x-transition
-                      class="right-0 mt-2 w-40 bg-white py-2 z-50"
+                      class="right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg py-2 z-50"
                     >
                       <a
                         href="#"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                         >مشهد</a
                       >
                       <a
                         href="#"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                         >کیش</a
                       >
                       <a
                         href="#"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                         >شیراز</a
                       >
                     </div>
                   </div>
+
+                  <!-- تور های خارجی -->
                   <div
                     x-data="{ open: false }"
                     class="relative inline-block text-left"
                   >
-                    <!-- Trigger -->
                     <div
                       class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
                       @click="open = !open"
                     >
-                      <span class="text-gray-700">تور های خارجی</span>
+                      <span>تور های خارجی</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"
-                        class="w-5 h-5 text-gray-700 transition-transform duration-200 text-sm font-medium"
+                        class="w-5 h-5 transition-transform duration-200"
                         :class="{ 'rotate-180': open }"
                       >
                         <path
@@ -157,57 +163,59 @@ import "../styles/style.css";
                       </svg>
                     </div>
 
-                    <!-- Dropdown Menu -->
                     <div
                       x-show="open"
                       @click.outside="open = false"
                       x-transition
-                      class="right-0 mt-2 w-40 bg-white py-2 z-50"
+                      class="right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg py-2 z-50"
                     >
                       <a
                         href="#"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                         >ترکیه</a
                       >
                       <a
                         href="#"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                         >لندن</a
                       >
                       <a
                         href="#"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                         >برزیل</a
                       >
                     </div>
                   </div>
-                  <a href="#">افتخارات</a>
+
+                  <a href="#" class="dark:text-white">افتخارات</a>
                 </nav>
               </div>
             </div>
           </div>
 
           <!-- DESKTOP NAVBAR -->
-
           <div class="hidden sm:flex items-center gap-4 ml-0">
-            <a href="#" class="text-sm font-medium text-gray-700 px-0">خانه</a>
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-700 dark:text-white">خانه</a
+            >
+
             <div
               x-data="{ open: false }"
               class="relative inline-block text-left"
             >
-              <!-- Trigger -->
               <div
                 class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
                 @click="open = !open"
               >
-                <span class="text-gray-700">تور های داخلی</span>
+                <span class="text-gray-700 dark:text-white">تور های داخلی</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-5 h-5 text-gray-700 transition-transform duration-200 text-sm font-medium"
+                  class="w-5 h-5 transition-transform duration-200"
                   :class="{ 'rotate-180': open }"
                 >
                   <path
@@ -217,25 +225,25 @@ import "../styles/style.css";
                 </svg>
               </div>
 
-              <!-- Dropdown Menu -->
               <div
                 x-show="open"
                 @click.outside="open = false"
                 x-transition
-                class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg border border-gray-200 dark:border-gray-600 py-2 z-50"
               >
                 <a
                   href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >مشهد</a
                 >
                 <a
                   href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100">کیش</a
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >کیش</a
                 >
                 <a
                   href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >شیراز</a
                 >
               </div>
@@ -245,19 +253,18 @@ import "../styles/style.css";
               x-data="{ open: false }"
               class="relative inline-block text-left"
             >
-              <!-- Trigger -->
               <div
                 class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
                 @click="open = !open"
               >
-                <span class="text-gray-700">تور های خارجی</span>
+                <span class="text-gray-700 dark:text-white">تور های خارجی</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-5 h-5 text-gray-700 transition-transform duration-200 text-sm font-medium"
+                  class="w-5 h-5 transition-transform duration-200"
                   :class="{ 'rotate-180': open }"
                 >
                   <path
@@ -267,41 +274,44 @@ import "../styles/style.css";
                 </svg>
               </div>
 
-              <!-- Dropdown Menu -->
               <div
                 x-show="open"
                 @click.outside="open = false"
                 x-transition
-                class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg border border-gray-200 dark:border-gray-600 py-2 z-50"
               >
                 <a
                   href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >ترکیه</a
                 >
                 <a
                   href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >لندن</a
                 >
                 <a
                   href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >برزیل</a
                 >
               </div>
             </div>
-            <a href="#" class="text-sm font-medium text-gray-700 px-0">مجله</a>
-            <a href="#" class="text-sm font-medium text-gray-700 px-0"
+
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-700 dark:text-white">مجله</a
+            >
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-700 dark:text-white"
               >افتخارات</a
             >
           </div>
 
           <!-- RIGHT SIDE -->
-
           <div class="flex items-center flex-row-reverse gap-4">
             <!-- AVATAR -->
-
             <div
               class="w-10 h-10 flex items-center justify-center rounded-full"
             >
@@ -313,7 +323,6 @@ import "../styles/style.css";
             </div>
 
             <!-- FLAG -->
-
             <div
               id="flagBtn"
               class="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer select-none transition-transform duration-150 hover:scale-105"
@@ -326,10 +335,9 @@ import "../styles/style.css";
               />
             </div>
 
-            <!-- MOON -->
-
-            <div
-              class="w-10 h-10 flex items-center justify-center rounded-full"
+            <!-- DARK MODE BUTTON -->
+            <button
+              class="dark-mod w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -342,14 +350,15 @@ import "../styles/style.css";
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 
-                 0-1.33.266-2.597.748-3.752A9.753 9.753 
-                 0 0 0 3 11.25C3 16.635 7.365 21 
-                 12.75 21a9.753 9.753 0 0 0 
-                 9.002-5.998Z"
+                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75
+                  c-5.385 0-9.75-4.365-9.75-9.75 
+                  0-1.33.266-2.597.748-3.752A9.753 
+                  9.753 0 0 0 3 11.25C3 16.635 7.365 
+                  21 12.75 21a9.753 9.753 0 0 0 
+                  9.002-5.998Z"
                 ></path>
               </svg>
-            </div>
+            </button>
           </div>
         </section>
       </nav>
@@ -361,21 +370,34 @@ import "../styles/style.css";
     <script>
       const flagBtn = document.getElementById("flagBtn");
       const flagImg = document.getElementById("flagImg");
+
+      // مقدار اولیه: فارسی فعال باشه
       let isPersian = true;
+
       flagBtn.addEventListener("click", function () {
-        if (isPersian) {
-          document.documentElement.setAttribute("dir", "ltr");
-          document.documentElement.setAttribute("lang", "en");
-          flagImg.src = "/src/images/iran.png";
-          flagImg.alt = "US flag";
-        } else {
+        if (!isPersian) {
+          // وقتی انگلیسیه و می‌خوای فارسی بشه
           document.documentElement.setAttribute("dir", "rtl");
           document.documentElement.setAttribute("lang", "fa");
-          flagImg.src = "/src/images/america.png";
+          flagImg.src = "/src/images/iran.png";
           flagImg.alt = "Iran flag";
+        } else {
+          // وقتی فارسیه و می‌خوای انگلیسی بشه
+          document.documentElement.setAttribute("dir", "ltr");
+          document.documentElement.setAttribute("lang", "en");
+          flagImg.src = "/src/images/america.png";
+          flagImg.alt = "US flag";
         }
         isPersian = !isPersian;
         window.dispatchEvent(new Event("dirChange"));
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const darkmodEL = document.querySelector(".dark-mod");
+        darkmodEL.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+        });
       });
     </script>
   </body>

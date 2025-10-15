@@ -375,6 +375,7 @@ import "../styles/style.css";
           flagImg.alt = "Iran flag";
         }
         isPersian = !isPersian;
+        window.dispatchEvent(new Event("dirChange"));
       });
     </script>
   </body>

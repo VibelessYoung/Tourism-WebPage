@@ -78,24 +78,30 @@ import "swiper/css/pagination";
     <script>
       import Swiper from "swiper";
       import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
-      const swiper = new Swiper(".mySwiper", {
-        modules: [Navigation, Pagination, Autoplay],
-        slidesPerView: 1,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+      let swiperInstance2;
+      function initSwiper2() {
+        const isRTL = document.documentElement.getAttribute("dir") === "rtl";
+        if (swiperInstance2) swiperInstance2.destroy(true, true);
+        swiperInstance2 = new Swiper(".mySwiper", {
+          modules: [Navigation, Pagination, Autoplay],
+          slidesPerView: 1,
+          loop: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      }
+      document.addEventListener("DOMContentLoaded", initSwiper2);
+      window.addEventListener("dirChange", initSwiper2);
     </script>
   </body>
 </html>

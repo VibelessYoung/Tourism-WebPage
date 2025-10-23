@@ -2,360 +2,343 @@
 import "../styles/style.css";
 ---
 
-<!doctype html>
-<html lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>درخواست سفر</title>
-  </head>
-  <body>
-    <main
-      x-data="{ showModal: false }"
-      class="p-5 flex justify-center items-center bg-gray-200 dark:bg-gray-800"
+<section
+  x-data="{ showModal: false }"
+  class="p-5 flex justify-center items-center bg-gray-200 dark:bg-gray-800"
+>
+  <form
+    action=""
+    class="relative rounded-2xl bg-white flex flex-col p-6 shadow-lg w-full max-w-[1200px]"
+    x-data="{ selected: 2 }"
+  >
+    <h1 class="text-gray-800 text-2xl text-center border-b pb-3 mb-4">
+      درخواست سفر
+    </h1>
+
+    <div
+      class="flex flex-col sm:flex-row gap-3 border-dashed border-b-2 border-gray-400 py-10 sm:py-0"
     >
-      <form
-        action=""
-        class="relative rounded-2xl bg-white flex flex-col p-6 shadow-lg w-full max-w-[1200px]"
-        x-data="{ selected: 2 }"
-      >
-        <h1 class="text-gray-800 text-2xl text-center border-b pb-3 mb-4">
-          درخواست سفر
-        </h1>
+      <div class="sm:flex sm:flex-col">
+        <span class="font-medium text-gray-700 sm:mb-3">تعداد نفرات</span>
 
-        <div
-          class="flex flex-col sm:flex-row gap-3 border-dashed border-b-2 border-gray-400 py-10 sm:py-0"
-        >
-          <div class="sm:flex sm:flex-col">
-            <span class="font-medium text-gray-700 sm:mb-3">تعداد نفرات</span>
-
-            <div class="flex justify-center gap-3 mb-6">
-              <template x-for="num in [1,2,3,4]" :key="num">
-                <button
-                  type="button"
-                  @click="selected = num"
-                  class="w-12 h-12 flex items-center justify-center rounded-lg font-bold transition"
-                  :class="selected === num 
+        <div class="flex justify-center gap-3 mb-6">
+          <template x-for="num in [1,2,3,4]" :key="num">
+            <button
+              type="button"
+              @click="selected = num"
+              class="w-12 h-12 flex items-center justify-center rounded-lg font-bold transition"
+              :class="selected === num 
                   ? 'bg-purple-600 text-white shadow-lg scale-105' 
                   : 'bg-purple-200 text-purple-800 hover:bg-purple-300'"
-                  x-text="num"
-                >
-                </button>
-              </template>
-            </div>
-          </div>
-          <div class="sm:flex sm:flex-col lg:ml-83 sm:ml-20">
-            <h1
-              class="text-gray-800 text-base border-t pt-5 pb-3 mb-4 sm:border-0 sm:py-0"
+              x-text="num"
             >
-              تعداد نفرات دلخواه
-            </h1>
-            <div class="relative w-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="purple"
-                class="w-6 h-6 absolute left-3 top-1/2 -translate-y-1/2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15 19a6 6 0 00-12 0M12 11a4 4 0 100-8 4 4 0 000 8zm9 8v-6m-3 3h6"
-                ></path>
-              </svg>
-              <input
-                type="text"
-                class="w-full rounded-2xl border-2 h-12 pl-12 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
-                placeholder="5"
-              />
+            </button>
+          </template>
+        </div>
+      </div>
+      <div class="sm:flex sm:flex-col lg:ml-83 sm:ml-20">
+        <h1
+          class="text-gray-800 text-base border-t pt-5 pb-3 mb-4 sm:border-0 sm:py-0"
+        >
+          تعداد نفرات دلخواه
+        </h1>
+        <div class="relative w-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="purple"
+            class="w-6 h-6 absolute left-3 top-1/2 -translate-y-1/2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 19a6 6 0 00-12 0M12 11a4 4 0 100-8 4 4 0 000 8zm9 8v-6m-3 3h6"
+            ></path>
+          </svg>
+          <input
+            type="text"
+            class="w-full rounded-2xl border-2 h-12 pl-12 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
+            placeholder="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col mt-5">
+      <form action="" class="flex flex-col">
+        <div class="flex flex-col sm:flex-row">
+          <div>
+            <h1>اطلاعات شخصی</h1>
+            <input
+              placeholder="نام"
+              type="text"
+              class="mt-5 w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
+            />
+            <input
+              placeholder="نام خانوادگی"
+              type="text"
+              class="my-5 w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
+            />
+            <input
+              placeholder="example@gmail.com"
+              type="email"
+              class="w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
+            />
+            <div
+              class="flex gap-10 items-center mt-5 border-b-black border-b-[0.5px] pb-5"
+            >
+              <h1 class="">جنسیت</h1>
+              <div class="flex justify-center items-center gap-4">
+                <label
+                  for="male"
+                  class="flex items-center gap-2 cursor-pointer"
+                >
+                  <input type="radio" name="gender" id="male" value="male" />
+                  آقا
+                </label>
+                <label
+                  for="female"
+                  class="flex items-center gap-2 cursor-pointer"
+                >
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="female"
+                    value="female"
+                  />
+                  خانم
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="flex flex-col mt-5">
-          <form action="" class="flex flex-col">
-            <div class="flex flex-col sm:flex-row">
-              <div>
-                <h1>اطلاعات شخصی</h1>
-                <input
-                  placeholder="نام"
-                  type="text"
-                  class="mt-5 w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
-                />
-                <input
-                  placeholder="نام خانوادگی"
-                  type="text"
-                  class="my-5 w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
-                />
-                <input
-                  placeholder="example@gmail.com"
-                  type="email"
-                  class="w-full rounded-2xl border-2 h-12 pl-5 pr-3 border-purple-700 outline-purple-600 placeholder:opacity-70 placeholder:text-gray-800"
-                />
-                <div
-                  class="flex gap-10 items-center mt-5 border-b-black border-b-[0.5px] pb-5"
-                >
-                  <h1 class="">جنسیت</h1>
-                  <div class="flex justify-center items-center gap-4">
-                    <label
-                      for="male"
-                      class="flex items-center gap-2 cursor-pointer"
-                    >
-                      <input
-                        type="radio"
-                        name="gender"
-                        id="male"
-                        value="male"
-                      />
-                      آقا
-                    </label>
-                    <label
-                      for="female"
-                      class="flex items-center gap-2 cursor-pointer"
-                    >
-                      <input
-                        type="radio"
-                        name="gender"
-                        id="female"
-                        value="female"
-                      />
-                      خانم
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="sm:w-full sm:px-10 lg:ml-50">
-                <div class="flex flex-col mt-5 sm:mt-0">
-                  <h1 class="mb-2 text-lg font-semibold sm:pb-2">
-                    روش‌های پرداخت
-                  </h1>
-                  <select
-                    class="border rounded-lg p-2 focus:outline-none sm:max-w-[300px]"
-                    name="payment"
-                    id="payment"
-                  >
-                    <option value="">انتخاب کنید...</option>
-                    <option value="credit-card">کارت بانکی</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="cash">نقدی</option>
-                  </select>
-                </div>
-              </div>
+          <div class="sm:w-full sm:px-10 lg:ml-50">
+            <div class="flex flex-col mt-5 sm:mt-0">
+              <h1 class="mb-2 text-lg font-semibold sm:pb-2">روش‌های پرداخت</h1>
+              <select
+                class="border rounded-lg p-2 focus:outline-none sm:max-w-[300px]"
+                name="payment"
+                id="payment"
+              >
+                <option value="">انتخاب کنید...</option>
+                <option value="credit-card">کارت بانکی</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash">نقدی</option>
+              </select>
             </div>
-          </form>
-          <button
-            type="button"
-            @click="showModal = true"
-            class="bg-purple-500 text-white flex justify-center py-3 mt-5 rounded-full"
-            >مرحله بعد</button
-          >
+          </div>
         </div>
       </form>
-      <div
-        x-show="showModal"
-        x-transition.scale.origin.center
-        class="flex flex-col bg-white rounded-2xl p-3 justify-center absolute z-50 w-[400px]"
+      <button
+        type="button"
+        @click="showModal = true"
+        class="bg-purple-500 text-white flex justify-center py-3 mt-5 rounded-full"
+        >مرحله بعد</button
       >
-        <h1 class="mb-1">ویژگی های سفرتان را انتخاب کنید</h1>
-        <div class="flex justify-between items-center bg-gray-100 py-3">
-          <h3>غذا</h3>
-          <div class="flex gap-3">
-            <div x-data="{ selected: [] }" class="flex gap-3">
-              <button
-                @click="selected.includes('شام') 
+    </div>
+  </form>
+  <div
+    x-show="showModal"
+    x-transition.scale.origin.center
+    class="flex flex-col bg-white rounded-2xl p-3 justify-center absolute z-50 w-[400px]"
+  >
+    <h1 class="mb-1">ویژگی های سفرتان را انتخاب کنید</h1>
+    <div class="flex justify-between items-center bg-gray-100 py-3">
+      <h3>غذا</h3>
+      <div class="flex gap-3">
+        <div x-data="{ selected: [] }" class="flex gap-3">
+          <button
+            @click="selected.includes('شام') 
               ? selected = selected.filter(i => i !== 'شام') 
               : selected.push('شام')"
-                :class="selected.includes('شام') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                شام
-              </button>
+            :class="selected.includes('شام') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            شام
+          </button>
 
-              <button
-                @click="selected.includes('ناهار') 
+          <button
+            @click="selected.includes('ناهار') 
               ? selected = selected.filter(i => i !== 'ناهار') 
               : selected.push('ناهار')"
-                :class="selected.includes('ناهار') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                ناهار
-              </button>
+            :class="selected.includes('ناهار') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            ناهار
+          </button>
 
-              <button
-                @click="selected.includes('صبحانه') 
+          <button
+            @click="selected.includes('صبحانه') 
               ? selected = selected.filter(i => i !== 'صبحانه') 
               : selected.push('صبحانه')"
-                :class="selected.includes('صبحانه') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                صبحانه
-              </button>
-            </div>
-          </div>
+            :class="selected.includes('صبحانه') ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            صبحانه
+          </button>
         </div>
-        <div class="flex justify-between items-center py-3">
-          <h3>مکان های دیدنی</h3>
-          <div class="flex gap-3">
-            <div x-data="{ selected: [] }" class="flex gap-3">
-              <button
-                @click="selected.includes('ورزشی') 
+      </div>
+    </div>
+    <div class="flex justify-between items-center py-3">
+      <h3>مکان های دیدنی</h3>
+      <div class="flex gap-3">
+        <div x-data="{ selected: [] }" class="flex gap-3">
+          <button
+            @click="selected.includes('ورزشی') 
               ? selected = selected.filter(i => i !== 'ورزشی') 
               : selected.push('ورزشی')"
-                :class="selected.includes('ورزشی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                ورزشی
-              </button>
+            :class="selected.includes('ورزشی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            ورزشی
+          </button>
 
-              <button
-                @click="selected.includes('تاریخی') 
+          <button
+            @click="selected.includes('تاریخی') 
               ? selected = selected.filter(i => i !== 'تاریخی') 
               : selected.push('تاریخی')"
-                :class="selected.includes('تاریخی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                تاریخی
-              </button>
+            :class="selected.includes('تاریخی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            تاریخی
+          </button>
 
-              <button
-                @click="selected.includes('تفریحی') 
+          <button
+            @click="selected.includes('تفریحی') 
               ? selected = selected.filter(i => i !== 'تفریحی') 
               : selected.push('تفریحی')"
-                :class="selected.includes('تفریحی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                تفریحی
-              </button>
-            </div>
-          </div>
+            :class="selected.includes('تفریحی') ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            تفریحی
+          </button>
         </div>
-        <div class="flex justify-between bg-gray-100 py-3">
-          <h3>هتل</h3>
-          <div class="flex gap-3">
-            <div x-data="{ selected: '' }" class="flex gap-3">
-              <button
-                @click="selected = '3'"
-                :class="selected === '3' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                3
-              </button>
+      </div>
+    </div>
+    <div class="flex justify-between bg-gray-100 py-3">
+      <h3>هتل</h3>
+      <div class="flex gap-3">
+        <div x-data="{ selected: '' }" class="flex gap-3">
+          <button
+            @click="selected = '3'"
+            :class="selected === '3' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            3
+          </button>
 
-              <button
-                @click="selected = '4'"
-                :class="selected === '4' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                4
-              </button>
+          <button
+            @click="selected = '4'"
+            :class="selected === '4' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            4
+          </button>
 
-              <button
-                @click="selected = '5'"
-                :class="selected === '5' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
-                class="rounded-2xl p-1.5"
-              >
-                5
-              </button>
-            </div>
-          </div>
+          <button
+            @click="selected = '5'"
+            :class="selected === '5' ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'"
+            class="rounded-2xl p-1.5"
+          >
+            5
+          </button>
         </div>
-        <div x-data="{ transfer: 'هوایی' }" class="space-y-3">
-          <div class="flex justify-between py-3">
-            <h3>انتقال</h3>
-            <div
-              class="inline-flex rounded-full border border-gray-300 overflow-hidden"
-            >
-              <button
-                @click="transfer = 'هوایی'"
-                :class="transfer === 'هوایی' 
-          ? 'bg-purple-600 text-white' 
-          : 'bg-white text-gray-600'"
-                class="px-4 py-2 font-medium transition"
-              >
-                هوایی
-              </button>
-
-              <button
-                @click="transfer = 'زمینی'"
-                :class="transfer === 'زمینی' 
-          ? 'bg-purple-600 text-white' 
-          : 'bg-white text-gray-600'"
-                class="px-4 py-2 font-medium transition border-r border-gray-300"
-              >
-                زمینی
-              </button>
-            </div>
-          </div>
-
-          <div class="flex justify-between bg-gray-100 py-3">
-            <h3>روش های انتقال</h3>
-            <div class="flex gap-3">
-              <button
-                class="rounded-2xl bg-red-200 p-1.5 transition"
-                :disabled="transfer === 'هوایی'"
-                :class="transfer === 'هوایی' ? 'opacity-50 blur-[1px] cursor-not-allowed' : ''"
-              >
-                اتوبوس
-              </button>
-
-              <button
-                class="rounded-2xl bg-red-200 p-1.5 transition"
-                :disabled="transfer === 'هوایی'"
-                :class="transfer === 'هوایی' ? 'opacity-50 blur-[1px] cursor-not-allowed' : ''"
-              >
-                قطار
-              </button>
-            </div>
-          </div>
-        </div>
-        <button
-          @click="showModal = false"
-          id="submit"
-          class="p-3 rounded-full bg-red-400 text-white mt-3">اعمال</button
+      </div>
+    </div>
+    <div x-data="{ transfer: 'هوایی' }" class="space-y-3">
+      <div class="flex justify-between py-3">
+        <h3>انتقال</h3>
+        <div
+          class="inline-flex rounded-full border border-gray-300 overflow-hidden"
         >
+          <button
+            @click="transfer = 'هوایی'"
+            :class="transfer === 'هوایی' 
+          ? 'bg-purple-600 text-white' 
+          : 'bg-white text-gray-600'"
+            class="px-4 py-2 font-medium transition"
+          >
+            هوایی
+          </button>
+
+          <button
+            @click="transfer = 'زمینی'"
+            :class="transfer === 'زمینی' 
+          ? 'bg-purple-600 text-white' 
+          : 'bg-white text-gray-600'"
+            class="px-4 py-2 font-medium transition border-r border-gray-300"
+          >
+            زمینی
+          </button>
+        </div>
       </div>
-      <div
-        x-show="showModal"
-        x-transition.opacity
-        @click="showModal = false"
-        class="fixed inset-0 bg-black opacity-65 z-40"
-      >
+
+      <div class="flex justify-between bg-gray-100 py-3">
+        <h3>روش های انتقال</h3>
+        <div class="flex gap-3">
+          <button
+            class="rounded-2xl bg-red-200 p-1.5 transition"
+            :disabled="transfer === 'هوایی'"
+            :class="transfer === 'هوایی' ? 'opacity-50 blur-[1px] cursor-not-allowed' : ''"
+          >
+            اتوبوس
+          </button>
+
+          <button
+            class="rounded-2xl bg-red-200 p-1.5 transition"
+            :disabled="transfer === 'هوایی'"
+            :class="transfer === 'هوایی' ? 'opacity-50 blur-[1px] cursor-not-allowed' : ''"
+          >
+            قطار
+          </button>
+        </div>
       </div>
-      <div
-        id="alert"
-        class="top-10 left-10 z-50 w-[300px] flex flex-col justify-center items-center bg-green-400 text-white fixed text-xl rounded-2xl hidden overflow-hidden"
-      >
-        <p class="p-4">تایید شد</p>
-        <div id="progress" class="w-full h-2 bg-green-700"></div>
-      </div>
+    </div>
+    <button
+      @click="showModal = false"
+      id="submit"
+      class="p-3 rounded-full bg-red-400 text-white mt-3">اعمال</button
+    >
+  </div>
+  <div
+    x-show="showModal"
+    x-transition.opacity
+    @click="showModal = false"
+    class="fixed inset-0 bg-black opacity-65 z-40"
+  >
+  </div>
+  <div
+    id="alert"
+    class="top-10 left-10 z-50 w-[300px] flex flex-col justify-center items-center bg-green-400 text-white fixed text-xl rounded-2xl hidden overflow-hidden"
+  >
+    <p class="p-4">تایید شد</p>
+    <div id="progress" class="w-full h-2 bg-green-700"></div>
+  </div>
 
-      <script
-        src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-        defer></script>
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const alertEL = document.querySelector("#alert");
-          const progressEL = document.querySelector("#progress");
-          const submitEL = document.querySelector("#submit");
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const alertEL = document.querySelector("#alert");
+      const progressEL = document.querySelector("#progress");
+      const submitEL = document.querySelector("#submit");
 
-          function clickHandler() {
-            alertEL.classList.remove("hidden");
+      function clickHandler() {
+        alertEL.classList.remove("hidden");
 
-            progressEL.style.width = "100%";
+        progressEL.style.width = "100%";
 
-            setTimeout(() => {
-              progressEL.style.width = "0%";
-            }, 50);
+        setTimeout(() => {
+          progressEL.style.width = "0%";
+        }, 50);
 
-            setTimeout(() => {
-              alertEL.classList.add("hidden");
-            }, 2050);
-          }
+        setTimeout(() => {
+          alertEL.classList.add("hidden");
+        }, 2050);
+      }
 
-          submitEL.addEventListener("click", clickHandler);
-        });
-      </script>
-    </main>
-  </body>
-</html>
+      submitEL.addEventListener("click", clickHandler);
+    });
+  </script>
+</section>

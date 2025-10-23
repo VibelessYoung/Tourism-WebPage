@@ -5,103 +5,93 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <main class="pt-5 px-5 dark:bg-gray-800">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <!-- SLIDER -->
-        <div class="sm:col-span-2">
-          <div
-            class="swiper mySwiper rounded-2xl overflow-hidden w-full aspect-video"
-          >
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="/src/images/slide-1.jpg"
-                  alt=""
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="/src/images/slide-2.jpg"
-                  alt=""
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="/src/images/slide-3.jpg"
-                  alt=""
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="/src/images/slide-4.jpg"
-                  alt=""
-                  class="h-full w-full object-cover"
-                />
-              </div>
-            </div>
-
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- Navigation -->
-            <!-- <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div> -->
+<section class="pt-5 px-5 dark:bg-gray-800">
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <!-- SLIDER -->
+    <div class="sm:col-span-2">
+      <div
+        class="swiper mySwiper rounded-2xl overflow-hidden w-full aspect-video"
+      >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="/src/images/slide-1.jpg"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="/src/images/slide-2.jpg"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="/src/images/slide-3.jpg"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="/src/images/slide-4.jpg"
+              alt=""
+              class="h-full w-full object-cover"
+            />
           </div>
         </div>
 
-        <!-- SIDE IMAGES -->
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-1">
-          <img
-            src="/src/images/pic-1.jpg"
-            alt=""
-            class="rounded-2xl object-cover w-full h-full"
-          />
-          <img
-            src="/src/images/pic-2.jpg"
-            alt=""
-            class="rounded-2xl object-cover w-full h-full"
-          />
-        </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation -->
+        <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
       </div>
-    </main>
-    <script>
-      import Swiper from "swiper";
-      import { Navigation, Pagination, Autoplay } from "swiper/modules";
-      let swiperInstance2;
-      function initSwiper2() {
-        const isRTL = document.documentElement.getAttribute("dir") === "rtl";
-        if (swiperInstance2) swiperInstance2.destroy(true, true);
-        swiperInstance2 = new Swiper(".mySwiper", {
-          modules: [Navigation, Pagination, Autoplay],
-          slidesPerView: 1,
-          loop: true,
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-        });
-      }
-      document.addEventListener("DOMContentLoaded", initSwiper2);
-      window.addEventListener("dirChange", initSwiper2);
-    </script>
-  </body>
-</html>
+    </div>
+
+    <!-- SIDE IMAGES -->
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-1">
+      <img
+        src="/src/images/pic-1.jpg"
+        alt=""
+        class="rounded-2xl object-cover w-full h-full"
+      />
+      <img
+        src="/src/images/pic-2.jpg"
+        alt=""
+        class="rounded-2xl object-cover w-full h-full"
+      />
+    </div>
+  </div>
+</section>
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules";
+  let swiperInstance2;
+  function initSwiper2() {
+    const isRTL = document.documentElement.getAttribute("dir") === "rtl";
+    if (swiperInstance2) swiperInstance2.destroy(true, true);
+    swiperInstance2 = new Swiper(".mySwiper", {
+      modules: [Navigation, Pagination, Autoplay],
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+  document.addEventListener("DOMContentLoaded", initSwiper2);
+  window.addEventListener("dirChange", initSwiper2);
+</script>

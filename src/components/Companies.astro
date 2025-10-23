@@ -2,234 +2,212 @@
 import "../styles/style.css";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <main>
-      <section class="flex flex-col bg-gray-300 py-30 dark:bg-gray-800">
-        <div class="hidden xl:flex justify-center gap-60 text-center dark:text-white  ">
-          <h1>نام شرکت</h1>
-          <h1>مقصد</h1>
-          <h1>هتل</h1>
-          <h1>مترجم</h1>
-          <h1>اقدامات</h1>
-        </div>
-        <div
-          class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 gap-5 md:gap-20 xl:gap-60"
+<section class="flex flex-col bg-gray-300 py-30 dark:bg-gray-800">
+  <div class="hidden xl:flex justify-center gap-60 text-center dark:text-white">
+    <h1>نام شرکت</h1>
+    <h1>مقصد</h1>
+    <h1>هتل</h1>
+    <h1>مترجم</h1>
+    <h1>اقدامات</h1>
+  </div>
+  <div
+    class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 gap-5 md:gap-20 xl:gap-60"
+  >
+    <div class="flex items-center">
+      <img
+        src="/src/images/avatar-4.jpg"
+        alt=""
+        class="rounded-full w-16 md:w-20 mx-3"
+      />
+      <div class="flex flex-col text-center md:text-start">
+        <h1>تست</h1>
+        <p>تست</p>
+      </div>
+    </div>
+    <h1>پاریس</h1>
+    <h1>تست</h1>
+    <h1 class="p-2 md:p-3 bg-green-200 text-green-600 rounded-full">دارد</h1>
+    <div class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end">
+      <button
+        class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base w-[400px] sm:w-auto"
+      >
+        ثبت نام
+      </button>
+      <div class="relative inline-block group">
+        <button
+          class="relative rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
         >
-          <div class="flex items-center">
-            <img
-              src="/src/images/avatar-4.jpg"
-              alt=""
-              class="rounded-full w-16 md:w-20 mx-3"
-            />
-            <div class="flex flex-col text-center md:text-start">
-              <h1>تست</h1>
-              <p>تست</p>
-            </div>
-          </div>
-          <h1>پاریس</h1>
-          <h1>تست</h1>
-          <h1 class="p-2 md:p-3 bg-green-200 text-green-600 rounded-full">
-            دارد
-          </h1>
-          <div
-            class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5 md:size-6"
           >
-            <button
-              class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base w-[400px] sm:w-auto"
-            >
-              ثبت نام
-            </button>
-            <div class="relative inline-block group">
-              <button
-                class="relative rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-5 md:size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-purple-700 text-white text-sm rounded-full px-3 py-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
-              >
-                ذخیره
-              </div>
-            </div>
-          </div>
-        </div>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+            ></path>
+          </svg>
+        </button>
         <div
-          class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
+          class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-purple-700 text-white text-sm rounded-full px-3 py-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
         >
-          <div class="flex items-center">
-            <img
-              src="/src/images/avatar-4.jpg"
-              alt=""
-              class="rounded-full w-16 md:w-20 mx-3"
-            />
-            <div class="flex flex-col text-center md:text-start">
-              <h1>تست</h1>
-              <p>تست</p>
-            </div>
-          </div>
-          <h1>پاریس</h1>
-          <h1>تست</h1>
-          <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
-          <div
-            class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end"
-          >
-            <button
-              class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base w-[400px] sm:w-auto"
-            >
-              ثبت نام
-            </button>
-            <div class="relative inline-block group">
-              <button
-                class="relative rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-5 md:size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-purple-700 text-white text-sm rounded-full px-3 py-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
-              >
-                ذخیره
-              </div>
-            </div>
-          </div>
+          ذخیره
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
+  >
+    <div class="flex items-center">
+      <img
+        src="/src/images/avatar-4.jpg"
+        alt=""
+        class="rounded-full w-16 md:w-20 mx-3"
+      />
+      <div class="flex flex-col text-center md:text-start">
+        <h1>تست</h1>
+        <p>تست</p>
+      </div>
+    </div>
+    <h1>پاریس</h1>
+    <h1>تست</h1>
+    <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
+    <div class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end">
+      <button
+        class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base w-[400px] sm:w-auto"
+      >
+        ثبت نام
+      </button>
+      <div class="relative inline-block group">
+        <button
+          class="relative rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5 md:size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+            ></path>
+          </svg>
+        </button>
         <div
-          class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
+          class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-purple-700 text-white text-sm rounded-full px-3 py-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
         >
-          <div class="flex items-center">
-            <img
-              src="/src/images/avatar-4.jpg"
-              alt=""
-              class="rounded-full w-16 md:w-20 mx-3"
-            />
-            <div class="flex flex-col text-center md:text-start">
-              <h1>تست</h1>
-              <p>تست</p>
-            </div>
-          </div>
-          <h1>پاریس</h1>
-          <h1>تست</h1>
-          <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
-          <div
-            class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end"
-          >
-            <button
-              class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base w-[400px] sm:w-auto"
-            >
-              ثبت نام
-            </button>
-            <div class="relative inline-block group">
-              <button
-                class="relative rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-5 md:size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-purple-700 text-white text-sm rounded-full px-3 py-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
-              >
-                ذخیره
-              </div>
-            </div>
-          </div>
+          ذخیره
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
+  >
+    <div class="flex items-center">
+      <img
+        src="/src/images/avatar-4.jpg"
+        alt=""
+        class="rounded-full w-16 md:w-20 mx-3"
+      />
+      <div class="flex flex-col text-center md:text-start">
+        <h1>تست</h1>
+        <p>تست</p>
+      </div>
+    </div>
+    <h1>پاریس</h1>
+    <h1>تست</h1>
+    <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
+    <div class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end">
+      <button
+        class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base w-[400px] sm:w-auto"
+      >
+        ثبت نام
+      </button>
+      <div class="relative inline-block group">
+        <button
+          class="relative rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5 md:size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+            ></path>
+          </svg>
+        </button>
         <div
-          class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
+          class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-purple-700 text-white text-sm rounded-full px-3 py-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
         >
-          <div class="flex items-center">
-            <img
-              src="/src/images/avatar-4.jpg"
-              alt=""
-              class="rounded-full w-16 md:w-20 mx-3"
-            />
-            <div class="flex flex-col text-center md:text-start">
-              <h1>تست</h1>
-              <p>تست</p>
-            </div>
-          </div>
-          <h1>پاریس</h1>
-          <h1>تست</h1>
-          <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
-          <div
-            class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end"
-          >
-            <button
-              class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base w-[400px] sm:w-auto"
-            >
-              ثبت نام
-            </button>
-            <div class="relative inline-block group">
-              <button
-                class="relative rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-5 md:size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-purple-700 text-white text-sm rounded-full px-3 py-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
-              >
-                ذخیره
-              </div>
-            </div>
-          </div>
+          ذخیره
         </div>
-      </section>
-    </main>
-  </body>
-</html>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex flex-col md:flex-row justify-between md:justify-center items-center bg-white rounded-2xl border border-black p-5 md:h-24 mx-3 md:mx-10 mt-5 gap-5 md:gap-20 xl:gap-60"
+  >
+    <div class="flex items-center">
+      <img
+        src="/src/images/avatar-4.jpg"
+        alt=""
+        class="rounded-full w-16 md:w-20 mx-3"
+      />
+      <div class="flex flex-col text-center md:text-start">
+        <h1>تست</h1>
+        <p>تست</p>
+      </div>
+    </div>
+    <h1>پاریس</h1>
+    <h1>تست</h1>
+    <h1 class="p-2 md:p-3 bg-red-200 text-red-600 rounded-full">ندارد</h1>
+    <div class="flex gap-3 md:gap-5 flex-wrap justify-center md:justify-end">
+      <button
+        class="rounded-2xl border border-purple-600 text-purple-600 px-4 py-2 text-sm md:text-base w-[400px] sm:w-auto"
+      >
+        ثبت نام
+      </button>
+      <div class="relative inline-block group">
+        <button
+          class="relative rounded-full bg-gray-200 p-2 md:p-3 text-black hover:bg-gray-300 transition-all"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5 md:size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+            ></path>
+          </svg>
+        </button>
+        <div
+          class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-purple-700 text-white text-sm rounded-full px-3 py-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+        >
+          ذخیره
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,398 +2,371 @@
 import "../styles/style.css";
 ---
 
-<!doctype html>
-<html lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tourism</title>
-  </head>
-  <body class="dark:bg-gray-800">
-    <!-- HEADER -->
-    <header class="w-full shadow-2xl dark:bg-gray-900 dark:text-white">
-      <nav
-        class="h-14 w-full bg-white dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 dark:text-white"
-      >
-        <section class="w-full p-[1rem] flex justify-between items-center">
-          <!-- HAMBURGER MENU -->
-          <div x-data="{ openMenu: false }" class="relative">
-            <div @click="openMenu = true">
+<!-- HEADER -->
+<header class="w-full shadow-2xl dark:bg-gray-900 dark:text-white">
+  <nav
+    class="h-14 w-full bg-white dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 dark:text-white"
+  >
+    <section class="w-full p-[1rem] flex justify-between items-center">
+      <!-- HAMBURGER MENU -->
+      <div x-data="{ openMenu: false }" class="relative">
+        <div @click="openMenu = true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 sm:hidden cursor-pointer"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+          </svg>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div
+          x-show="openMenu"
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 translate-x-full"
+          x-transition:enter-end="opacity-100 translate-x-0"
+          x-transition:leave="transition ease-in duration-300"
+          x-transition:leave-start="opacity-100 translate-x-0"
+          x-transition:leave-end="opacity-0 translate-x-full"
+          class="fixed inset-0 z-40 flex"
+        >
+          <!-- overlay -->
+          <div
+            class="absolute inset-0 bg-black/60 backdrop-blur-md"
+            @click="openMenu = false"
+          >
+          </div>
+
+          <!-- MENU BOX -->
+          <div
+            class="absolute flex flex-col right-0 top-0 bg-white dark:bg-gray-800 dark:text-white z-50 h-full w-1/2 shadow-xl p-4"
+          >
+            <button
+              class="text-gray-600 dark:text-gray-300 mb-4"
+              @click="openMenu = false"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6 sm:hidden cursor-pointer"
+                class="size-8 text-red-700 mr-auto"
               >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                  d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 
+                      12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                ></path>
               </svg>
-            </div>
+            </button>
 
-            <!-- MOBILE MENU -->
-            <div
-              x-show="openMenu"
-              x-transition:enter="transition ease-out duration-300"
-              x-transition:enter-start="opacity-0 translate-x-full"
-              x-transition:enter-end="opacity-100 translate-x-0"
-              x-transition:leave="transition ease-in duration-300"
-              x-transition:leave-start="opacity-100 translate-x-0"
-              x-transition:leave-end="opacity-0 translate-x-full"
-              class="fixed inset-0 z-40 flex"
+            <nav
+              class="flex flex-col gap-4 text-gray-700 dark:text-white"
+              dir="rtl"
             >
-              <!-- overlay -->
+              <a href="#" class="dark:text-white">خانه</a>
+              <!-- تور های داخلی -->
               <div
-                class="absolute inset-0 bg-black/60 backdrop-blur-md"
-                @click="openMenu = false"
+                x-data="{ open: false }"
+                class="relative inline-block text-left"
               >
-              </div>
-
-              <!-- MENU BOX -->
-              <div
-                class="absolute flex flex-col right-0 top-0 bg-white dark:bg-gray-800 dark:text-white z-50 h-full w-1/2 shadow-xl p-4"
-              >
-                <button
-                  class="text-gray-600 dark:text-gray-300 mb-4"
-                  @click="openMenu = false"
+                <div
+                  class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
+                  @click="open = !open"
                 >
+                  <span>تور های داخلی</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="size-8 text-red-700 mr-auto"
+                    class="w-5 h-5 transition-transform duration-200"
+                    :class="{ 'rotate-180': open }"
                   >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 
-                      12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                    ></path>
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
                   </svg>
-                </button>
+                </div>
 
-                <nav
-                  class="flex flex-col gap-4 text-gray-700 dark:text-white"
-                  dir="rtl"
+                <div
+                  x-show="open"
+                  @click.outside="open = false"
+                  x-transition
+                  class="right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg py-2 z-50"
                 >
-                  <a href="#" class="dark:text-white">خانه</a>
-                  <!-- تور های داخلی -->
-                  <div
-                    x-data="{ open: false }"
-                    class="relative inline-block text-left"
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >مشهد</a
                   >
-                    <div
-                      class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
-                      @click="open = !open"
-                    >
-                      <span>تور های داخلی</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-5 h-5 transition-transform duration-200"
-                        :class="{ 'rotate-180': open }"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                      </svg>
-                    </div>
-
-                    <div
-                      x-show="open"
-                      @click.outside="open = false"
-                      x-transition
-                      class="right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg py-2 z-50"
-                    >
-                      <a
-                        href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >مشهد</a
-                      >
-                      <a
-                        href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >کیش</a
-                      >
-                      <a
-                        href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >شیراز</a
-                      >
-                    </div>
-                  </div>
-
-                  <!-- تور های خارجی -->
-                  <div
-                    x-data="{ open: false }"
-                    class="relative inline-block text-left"
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >کیش</a
                   >
-                    <div
-                      class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
-                      @click="open = !open"
-                    >
-                      <span>تور های خارجی</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-5 h-5 transition-transform duration-200"
-                        :class="{ 'rotate-180': open }"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                      </svg>
-                    </div>
-
-                    <div
-                      x-show="open"
-                      @click.outside="open = false"
-                      x-transition
-                      class="right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg py-2 z-50"
-                    >
-                      <a
-                        href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >ترکیه</a
-                      >
-                      <a
-                        href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >لندن</a
-                      >
-                      <a
-                        href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >برزیل</a
-                      >
-                    </div>
-                  </div>
-
-                  <a href="#" class="dark:text-white">افتخارات</a>
-                </nav>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >شیراز</a
+                  >
+                </div>
               </div>
-            </div>
+
+              <!-- تور های خارجی -->
+              <div
+                x-data="{ open: false }"
+                class="relative inline-block text-left"
+              >
+                <div
+                  class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
+                  @click="open = !open"
+                >
+                  <span>تور های خارجی</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 transition-transform duration-200"
+                    :class="{ 'rotate-180': open }"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                  </svg>
+                </div>
+
+                <div
+                  x-show="open"
+                  @click.outside="open = false"
+                  x-transition
+                  class="right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg py-2 z-50"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >ترکیه</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >لندن</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >برزیل</a
+                  >
+                </div>
+              </div>
+
+              <a href="#" class="dark:text-white">افتخارات</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESKTOP NAVBAR -->
+      <div class="hidden sm:flex items-center gap-4 ml-0">
+        <a href="#" class="text-sm font-medium text-gray-700 dark:text-white"
+          >خانه</a
+        >
+
+        <div x-data="{ open: false }" class="relative inline-block text-left">
+          <div
+            class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
+            @click="open = !open"
+          >
+            <span class="text-gray-700 dark:text-white">تور های داخلی</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 transition-transform duration-200"
+              :class="{ 'rotate-180': open }"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg>
           </div>
 
-          <!-- DESKTOP NAVBAR -->
-          <div class="hidden sm:flex items-center gap-4 ml-0">
+          <div
+            x-show="open"
+            @click.outside="open = false"
+            x-transition
+            class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg border border-gray-200 dark:border-gray-600 py-2 z-50"
+          >
             <a
               href="#"
-              class="text-sm font-medium text-gray-700 dark:text-white">خانه</a
-            >
-
-            <div
-              x-data="{ open: false }"
-              class="relative inline-block text-left"
-            >
-              <div
-                class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
-                @click="open = !open"
-              >
-                <span class="text-gray-700 dark:text-white">تور های داخلی</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5 h-5 transition-transform duration-200"
-                  :class="{ 'rotate-180': open }"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                </svg>
-              </div>
-
-              <div
-                x-show="open"
-                @click.outside="open = false"
-                x-transition
-                class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg border border-gray-200 dark:border-gray-600 py-2 z-50"
-              >
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >مشهد</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >کیش</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >شیراز</a
-                >
-              </div>
-            </div>
-
-            <div
-              x-data="{ open: false }"
-              class="relative inline-block text-left"
-            >
-              <div
-                class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
-                @click="open = !open"
-              >
-                <span class="text-gray-700 dark:text-white">تور های خارجی</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5 h-5 transition-transform duration-200"
-                  :class="{ 'rotate-180': open }"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                </svg>
-              </div>
-
-              <div
-                x-show="open"
-                @click.outside="open = false"
-                x-transition
-                class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg border border-gray-200 dark:border-gray-600 py-2 z-50"
-              >
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >ترکیه</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >لندن</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >برزیل</a
-                >
-              </div>
-            </div>
-
-            <a
-              href="#"
-              class="text-sm font-medium text-gray-700 dark:text-white">مجله</a
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+              >مشهد</a
             >
             <a
               href="#"
-              class="text-sm font-medium text-gray-700 dark:text-white"
-              >افتخارات</a
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+              >کیش</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+              >شیراز</a
             >
           </div>
+        </div>
 
-          <!-- RIGHT SIDE -->
-          <div class="flex items-center flex-row-reverse gap-4">
-            <!-- AVATAR -->
-            <div
-              class="w-10 h-10 flex items-center justify-center rounded-full"
+        <div x-data="{ open: false }" class="relative inline-block text-left">
+          <div
+            class="flex items-center gap-2 cursor-pointer select-none text-sm font-medium"
+            @click="open = !open"
+          >
+            <span class="text-gray-700 dark:text-white">تور های خارجی</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 transition-transform duration-200"
+              :class="{ 'rotate-180': open }"
             >
-              <img
-                src="/src/images/avatar-2.jpg"
-                alt="avatar"
-                class="w-8 h-8 rounded-full object-cover"
-              />
-            </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg>
+          </div>
 
-            <!-- FLAG -->
-            <div
-              id="flagBtn"
-              class="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer select-none transition-transform duration-150 hover:scale-105"
+          <div
+            x-show="open"
+            @click.outside="open = false"
+            x-transition
+            class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg border border-gray-200 dark:border-gray-600 py-2 z-50"
+          >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+              >ترکیه</a
             >
-              <img
-                id="flagImg"
-                src="/src/images/iran.png"
-                alt="پرچم ایران"
-                class="h-8 w-8 rounded-full object-cover"
-              />
-            </div>
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+              >لندن</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+              >برزیل</a
+            >
+          </div>
+        </div>
 
-            <!-- DARK MODE BUTTON -->
-            <button
-              class="dark-mod w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75
+        <a href="#" class="text-sm font-medium text-gray-700 dark:text-white"
+          >مجله</a
+        >
+        <a href="#" class="text-sm font-medium text-gray-700 dark:text-white"
+          >افتخارات</a
+        >
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="flex items-center flex-row-reverse gap-4">
+        <!-- AVATAR -->
+        <div class="w-10 h-10 flex items-center justify-center rounded-full">
+          <img
+            src="/src/images/avatar-2.jpg"
+            alt="avatar"
+            class="w-8 h-8 rounded-full object-cover"
+          />
+        </div>
+
+        <!-- FLAG -->
+        <div
+          id="flagBtn"
+          class="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer select-none transition-transform duration-150 hover:scale-105"
+        >
+          <img
+            id="flagImg"
+            src="/src/images/iran.png"
+            alt="پرچم ایران"
+            class="h-8 w-8 rounded-full object-cover"
+          />
+        </div>
+
+        <!-- DARK MODE BUTTON -->
+        <button
+          class="dark-mod w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75
                   c-5.385 0-9.75-4.365-9.75-9.75 
                   0-1.33.266-2.597.748-3.752A9.753 
                   9.753 0 0 0 3 11.25C3 16.635 7.365 
                   21 12.75 21a9.753 9.753 0 0 0 
                   9.002-5.998Z"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </section>
-      </nav>
-    </header>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <script>
-      const flagBtn = document.getElementById("flagBtn");
-      const flagImg = document.getElementById("flagImg");
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </nav>
+</header>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>
+<script>
+  const flagBtn = document.getElementById("flagBtn");
+  const flagImg = document.getElementById("flagImg");
 
-      // مقدار اولیه: فارسی فعال باشه
-      let isPersian = true;
+  let isPersian = true;
 
-      flagBtn.addEventListener("click", function () {
-        if (!isPersian) {
-          // وقتی انگلیسیه و می‌خوای فارسی بشه
-          document.documentElement.setAttribute("dir", "rtl");
-          document.documentElement.setAttribute("lang", "fa");
-          flagImg.src = "/src/images/iran.png";
-          flagImg.alt = "Iran flag";
-        } else {
-          // وقتی فارسیه و می‌خوای انگلیسی بشه
-          document.documentElement.setAttribute("dir", "ltr");
-          document.documentElement.setAttribute("lang", "en");
-          flagImg.src = "/src/images/america.png";
-          flagImg.alt = "US flag";
-        }
-        isPersian = !isPersian;
-        window.dispatchEvent(new Event("dirChange"));
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const darkmodEL = document.querySelector(".dark-mod");
-        darkmodEL.addEventListener("click", () => {
-          document.documentElement.classList.toggle("dark");
-        });
-      });
-    </script>
-  </body>
-</html>
+  flagBtn.addEventListener("click", function () {
+    if (!isPersian) {
+      document.documentElement.setAttribute("dir", "rtl");
+      document.documentElement.setAttribute("lang", "fa");
+      flagImg.src = "/src/images/iran.png";
+      flagImg.alt = "Iran flag";
+    } else {
+      document.documentElement.setAttribute("dir", "ltr");
+      document.documentElement.setAttribute("lang", "en");
+      flagImg.src = "/src/images/america.png";
+      flagImg.alt = "US flag";
+    }
+    isPersian = !isPersian;
+    window.dispatchEvent(new Event("dirChange"));
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const darkmodEL = document.querySelector(".dark-mod");
+    darkmodEL.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  });
+</script>
